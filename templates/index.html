@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PunchPoint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>PunchPoint</div>
+  <nav id="nav" aria-label="Main"></nav>
+  <div class="hdr-right">
+    <div class="hdr-clock mono" id="hdrClock" aria-hidden="true"></div>
+    <div class="hdr-user"><span class="dot idle" id="devDot" title="Scanner"></span><b id="hdrUser"></b>
+      <button class="btn sm ghost" data-act="logout">Sign out</button></div>
+  </div>
+</div></header>
+<main id="view" class="wrap"></main>
+<div id="modalRoot"></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

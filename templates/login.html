@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign in - PunchPoint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+<style>
+body{display:grid;place-items:center;min-height:100vh;padding:24px}
+.login{width:100%;max-width:380px}
+.login .card{padding:28px}
+.login .brand{justify-content:center;margin-bottom:6px;font-size:24px}
+.login p.sub{text-align:center;margin:0 auto 22px}
+.login label{margin-bottom:14px}
+.login .btn{width:100%}
+.msg{border-radius:9px;padding:10px 14px;font-weight:600;font-size:14px;margin-bottom:16px}
+.msg.bad{background:var(--bad-soft);color:var(--bad)}
+.msg.hint{background:var(--brand-soft);color:var(--brand)}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="login">
+  <section class="card">
+    <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>PunchPoint</div>
+    <p class="sub">Attendance records for the whole office, in one place.</p>
+    {% if error %}<div class="msg bad" role="alert">{{ error }}</div>{% endif %}
+    {% if hint %}<div class="msg hint">{{ hint }}</div>{% endif %}
+    <form method="post" action="/login" autocomplete="on">
+      <label>Username<input name="username" autocomplete="username" autofocus required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+  </section>
+  <p class="foot">Ask your administrator for an account.</p>
+</div>
+</body>
+</html>
